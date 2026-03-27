@@ -507,74 +507,112 @@ kbd {
 
 /* Donation Section */
 .support-section {
-    padding: 100px 0;
-    text-align: center;
+    padding: 120px 0;
+    background: #fff;
+    position: relative;
 }
 
 .support-header {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 .donation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
+    gap: 32px;
+    max-width: 1040px;
     margin: 0 auto;
 }
 
 .donation-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 40px 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 48px 32px;
     text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
+    color: var(--text);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(10px);
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .donation-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(59, 110, 245, 0.12);
+    border-color: var(--blue-light);
 }
 
-.donation-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.donation-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    transition: transform 0.4s ease;
 }
+
+.donation-card:hover .donation-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.kofi .donation-icon-wrapper { background: rgba(255, 94, 91, 0.1); color: #ff5e5b; }
+.bmc .donation-icon-wrapper { background: rgba(255, 221, 0, 0.15); color: #d4ac00; }
+.github .donation-icon-wrapper { background: rgba(46, 164, 79, 0.1); color: #2ea44f; }
 
 .donation-card h3 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 12px;
+    font-weight: 800;
 }
 
 .donation-card p {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 25px;
+    color: var(--text2);
+    margin-bottom: 30px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .donation-btn {
     font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 12px 24px;
+    font-size: 0.88rem;
+    padding: 12px 28px;
     border-radius: 50px;
-    transition: all 0.2s;
+    background: var(--bg);
+    color: var(--blue);
+    border: 1.5px solid var(--border);
+    transition: all 0.3s ease;
 }
 
-/* Platform specific colors */
-.kofi:hover .donation-btn { background: #ff5e5b; color: white; }
-.bmc:hover .donation-btn { background: #FFDD00; color: #000; }
-.github:hover .donation-btn { background: #2ea44f; color: white; }
+.donation-card:hover .donation-btn {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+    box-shadow: 0 4px 15px rgba(59, 110, 245, 0.3);
+}
+
+/* Featured Badge */
+.popular-tag {
+    position: absolute;
+    top: -14px;
+    background: var(--blue);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(59, 110, 245, 0.3);
+}
 
 .nav-highlight {
     color: #ff5e5b !important;
