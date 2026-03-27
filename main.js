@@ -88,15 +88,14 @@ const counters = [
 ];
 
 // ── GitHub API Download Counter & Latest Download Link ──
+let cachedExeUrl = null;
+
 async function fetchGitHubDownloads() {
   const GITHUB_API = 'https://api.github.com/repos/Gangula-Sandaru/clippie/releases';
   
   try {
     const response = await fetch(GITHUB_API);
-    if (!response.ok) {
-      console.warn('GitHub API Response Error:', response.status);
-      return;
-    }
+    if (!response.ok) return;
     const releases = await response.json();
     
     let total = 0;
@@ -104,24 +103,21 @@ async function fetchGitHubDownloads() {
     let latestVersion = null;
 
     releases.forEach((rel, index) => {
-      // 1. Calculate total downloads across all releases
       if (rel.assets) {
         rel.assets.forEach(asset => total += (asset.download_count || 0));
         
-        // 2. Identify the direct .exe link for the most recent release
         if (index === 0) {
           latestVersion = rel.tag_name;
-          // Find the asset that is likely the installer
+          // Priority for .exe files
           const exeAsset = rel.assets.find(a => a.name.toLowerCase().endsWith('.exe'));
           if (exeAsset) {
             latestExe = exeAsset.browser_download_url;
-            console.log('Latest Clippie Installer Found:', latestExe);
+            cachedExeUrl = latestExe;
           }
         }
       }
     });
 
-    // Update Counter elements if present
     if (total > 0) {
       counters.forEach(c => {
         const el = document.getElementById(c.id);
@@ -129,13 +125,10 @@ async function fetchGitHubDownloads() {
       });
     }
 
-    // Update all Download Buttons with class .latest-dl-link
     if (latestExe) {
-      const dlLinks = document.querySelectorAll('.latest-dl-link');
-      dlLinks.forEach(link => {
+      document.querySelectorAll('.latest-dl-link').forEach(link => {
         link.href = latestExe;
-        // Optional: remove any default navigation preventers
-        link.onclick = null; 
+        link.setAttribute('download', '');
       });
       
       const vLabel = document.querySelector('.dl-version');
@@ -143,9 +136,19 @@ async function fetchGitHubDownloads() {
     }
 
   } catch (error) {
-    console.error('Download fetch failed:', error);
+    console.warn('API Fetch failed:', error);
   }
 }
+
+// Global click handler to ensure download starts even if link hasn't updated yet
+document.addEventListener('click', (e) => {
+  const dlLink = e.target.closest('.latest-dl-link');
+  if (dlLink && cachedExeUrl && dlLink.href !== cachedExeUrl) {
+    e.preventDefault();
+    window.location.href = cachedExeUrl;
+  }
+});
+
 fetchGitHubDownloads();
 
 const counterObserver = new IntersectionObserver((entries) => {
