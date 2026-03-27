@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features – Clippie</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-icon">⧉</span> Clippie</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html" class="active">Features</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="download.html" class="btn-nav">Get Clippie Free</a>
+    <button class="burger" id="burger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="download.html">Download</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="container">
+    <p class="page-label">What's Inside</p>
+    <h1>Everything You Need<br><span class="gradient-text">From a Clipboard App</span></h1>
+    <p class="page-sub">Clippie is packed with smart features to make your workflow faster, cleaner, and more organised.</p>
+  </div>
+</section>
+
+<!-- MAIN FEATURES GRID -->
+<section class="features-section">
+  <div class="container">
+
+    <!-- Feature 1 – Clipboard History -->
+    <div class="feature-row fade-up">
+      <div class="feature-text">
+        <div class="feat-number">01</div>
+        <h2>Full Clipboard History</h2>
+        <p>Every piece of text, image, or code you copy is automatically captured and stored. Browse everything from a clean dashboard — no manual saving required.</p>
+        <ul class="feat-list">
+          <li>✔ Stores up to Unlimited clips</li>
+          <li>✔ Auto-saves in the background</li>
+          <li>✔ Timestamped entries</li>
+        </ul>
+      </div>
+      <div class="feature-img-box">
+        <img src="screenshots/screen1.png" alt="Clipboard History" class="feat-screenshot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="screenshots/screen4.png" alt="Clipboard History" class="feat-screenshot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="feat-placeholder" style="display:none">
+          <div class="clip-card"><span class="clip-tag">TEXT</span><p>Mastered cross-browser compatibility and layout testing</p></div>
+          <div class="clip-card"><span class="clip-tag">TEXT</span><p>npm install clipboard-manager</p></div>
+          <div class="clip-card"><span class="clip-tag img-tag">IMAGE</span><div class="clip-img-placeholder"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2 – Smart Categories -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-text">
+        <div class="feat-number">02</div>
+        <h2>Smart Auto-Categories</h2>
+        <p>Clippie uses regex-based detection to instantly sort your clips into intelligent categories — so you always know where to look.</p>
+        <ul class="feat-list">
+          <li>🔗 URLs & Web Links</li>
+          <li>&lt;/&gt; Source Code & Snippets</li>
+          <li>@ Email Addresses</li>
+          <li>🖼 Images & Screenshots</li>
+          <li>TXT Plain Text Notes</li>
+        </ul>
+      </div>
+      <div class="feature-img-box">
+        <div class="categories-visual">
+          <div class="cat-pill active">ALL  All Clips</div>
+          <div class="cat-pill">★ Favorites</div>
+          <div class="cat-pill">TXT  Plain Text</div>
+          <div class="cat-pill">&lt;/&gt; Source Code</div>
+          <div class="cat-pill">🔗 Web Links</div>
+          <div class="cat-pill">@ Emails</div>
+          <div class="cat-pill">🖼 Images</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3 – Floating Button -->
+    <div class="feature-row fade-up">
+      <div class="feature-text">
+        <div class="feat-number">03</div>
+        <h2>Quick-Access Floating Button</h2>
+        <p>A subtle floating button lives on your screen at all times. Hold <kbd>Alt</kbd> to reveal it, hover to slide out recent clips, and click to paste — without ever leaving your work.</p>
+        <ul class="feat-list">
+          <li>✔ Always accessible</li>
+          <li>✔ Non-intrusive design</li>
+          <li>✔ Toggle on/off in Settings</li>
+        </ul>
+      </div>
+      <div class="feature-img-box">
+        <div class="floating-demo">
+          <div class="floating-btn-demo">⧉</div>
+          <div class="floating-panel-demo">
+            <div class="fp-item">npm install clipboard-manager</div>
+            <div class="fp-item">Cross-browser testing complete</div>
+            <div class="fp-item">file:///C:/Users/HP/Desktop/…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 4 – Themes & Settings -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-text">
+        <div class="feat-number">04</div>
+        <h2>Themes & Customisation</h2>
+        <p>Make Clippie feel at home. Choose from beautiful visual themes and configure the history limit that works best for your workflow.</p>
+        <ul class="feat-list">
+          <li>🌙 Dark OLED</li>
+          <li>🌃 Tokyo Night</li>
+          <li>☀️ Light Minimal</li>
+          <li>📦 50 / 100 / 1000 / Unlimited records</li>
+        </ul>
+      </div>
+      <div class="feature-img-box">
+        <div class="themes-visual">
+          <div class="theme-card dark-oled">
+            <span>Dark OLED</span>
+            <div class="theme-bar"></div>
+            <div class="theme-bar short"></div>
+          </div>
+          <div class="theme-card tokyo">
+            <span>Tokyo Night</span>
+            <div class="theme-bar"></div>
+            <div class="theme-bar short"></div>
+          </div>
+          <div class="theme-card light selected-theme">
+            <span>Light Minimal ✓</span>
+            <div class="theme-bar"></div>
+            <div class="theme-bar short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 5 – Favourites -->
+    <div class="feature-row fade-up">
+      <div class="feature-text">
+        <div class="feat-number">05</div>
+        <h2>Favourites & Pinning</h2>
+        <p>Star any clip to save it permanently to your Favourites collection. Use the 📌 Lock icon in the floating panel to keep it open while pasting multiple items.</p>
+        <ul class="feat-list">
+          <li>✔ Permanent starred clips</li>
+          <li>✔ Panel pin/lock mode</li>
+          <li>✔ Never loses favourites on cleanup</li>
+        </ul>
+      </div>
+      <div class="feature-img-box">
+        <div class="fav-demo">
+          <div class="fav-clip"><span class="clip-tag">TEXT</span><p>My API Key backup</p><span class="star-icon filled">★</span></div>
+          <div class="fav-clip"><span class="clip-tag">TEXT</span><p>Important snippet</p><span class="star-icon filled">★</span></div>
+          <div class="fav-clip muted"><span class="clip-tag">TEXT</span><p>Random note</p><span class="star-icon">☆</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Try all these features — for free.</h2>
+    <p>No subscription. No account. Just download and go.</p>
+    <a href="download.html" class="btn-primary">Download Clippie Now</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><span class="logo">⧉ Clippie</span><p>The smart clipboard manager for Windows.</p></div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Clippie. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

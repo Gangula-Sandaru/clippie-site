@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Clippie</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-icon">⧉</span> Clippie</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="download.html" class="btn-nav">Get Clippie Free</a>
+    <button class="burger" id="burger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="download.html">Download</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="container">
+    <p class="page-label">Get in Touch</p>
+    <h1>We'd Love to <span class="gradient-text">Hear from You</span></h1>
+    <p class="page-sub">Have a question, suggestion, or found a bug? Reach out and we'll get back to you.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap fade-up">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>General Inquiry</option>
+              <option>Bug Report</option>
+              <option>Feature Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="6" placeholder="Tell us what's on your mind…" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">Send Message →</button>
+          <div class="form-success" id="formSuccess">✓ Message sent! We'll reply soon.</div>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="contact-info fade-up">
+        <div class="ci-card">
+          <div class="ci-icon">💬</div>
+          <h3>General Support</h3>
+          <p>Questions about how Clippie works? Check the <a href="how-it-works.html">How It Works</a> page first — most answers are there.</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">🐛</div>
+          <h3>Bug Reports</h3>
+          <p>Found something broken? Use the form and select "Bug Report" — include your Windows version for faster help.</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">💡</div>
+          <h3>Feature Requests</h3>
+          <p>Have an idea to make Clippie better? We genuinely read every suggestion and many features came from user requests.</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">⏱</div>
+          <h3>Response Time</h3>
+          <p>We typically reply within 24–48 hours on weekdays.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><span class="logo">⧉ Clippie</span><p>The smart clipboard manager for Windows.</p></div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Clippie. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formSuccess').style.display = 'block';
+    this.reset();
+    setTimeout(()=>{ document.getElementById('formSuccess').style.display='none'; }, 4000);
+  });
+</script>
+</body>
+</html>

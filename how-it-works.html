@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works – Clippie</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-icon">⧉</span> Clippie</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="how-it-works.html" class="active">How It Works</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="download.html" class="btn-nav">Get Clippie Free</a>
+    <button class="burger" id="burger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="download.html">Download</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="container">
+    <p class="page-label">Simple to Use</p>
+    <h1>How Clippie <span class="gradient-text">Works</span></h1>
+    <p class="page-sub">From install to paste — Clippie is designed to stay out of your way while doing all the heavy lifting.</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section">
+  <div class="container">
+    <div class="steps-timeline">
+
+      <div class="step-item fade-up">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Install & Launch</h3>
+          <p>Download Clippie and run the installer. It launches silently on startup — no configuration required. You'll see the Clippie icon appear in your system tray.</p>
+          <div class="step-visual install-visual">
+            <div class="install-icon">⧉</div>
+            <div class="install-arrow">→</div>
+            <div class="tray-icon">📎</div>
+            <span>System Tray</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Copy Anything</h3>
+          <p>Just use <kbd>Ctrl+C</kbd> as you always do. Clippie silently captures every copy event in the background — text, images, code, URLs, emails — all without interrupting you.</p>
+          <div class="step-visual copy-visual">
+            <div class="key-combo"><kbd>Ctrl</kbd> + <kbd>C</kbd></div>
+            <div class="copy-arrow">→</div>
+            <div class="saved-badge">Saved ✓</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Access the Floating Panel</h3>
+          <p>Hold <kbd>Alt</kbd> to reveal the floating blue button. Hover over it and your recent clips slide out in a clean panel — ready to select.</p>
+          <div class="step-visual float-visual">
+            <div class="float-btn-anim">⧉</div>
+            <div class="float-arrow">→</div>
+            <div class="panel-preview">
+              <div class="pp-item">npm install…</div>
+              <div class="pp-item">Cross-browser…</div>
+              <div class="pp-item">file:///C:/…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Click to Paste Instantly</h3>
+          <p>Click any clip in the floating panel and it's instantly pasted into your active window — no keyboard shortcut needed. It's that simple.</p>
+          <div class="step-visual paste-visual">
+            <div class="mouse-click">🖱️ Click</div>
+            <div class="paste-arrow">→</div>
+            <div class="pasted-text">Text pasted! ⚡</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Browse & Search the Dashboard</h3>
+          <p>Click "View all →" to open the full Clippie dashboard. Search, filter by category, star favourites, and manage your entire history from one clean interface.</p>
+          <div class="step-visual dash-visual">
+            <div class="dash-mini">
+              <div class="dm-sidebar">
+                <div class="dm-item a">ALL</div>
+                <div class="dm-item">TXT</div>
+                <div class="dm-item">&lt;/&gt;</div>
+                <div class="dm-item">🖼</div>
+              </div>
+              <div class="dm-main">
+                <div class="dm-search">🔍 Search…</div>
+                <div class="dm-clip">npm install…</div>
+                <div class="dm-clip">Cross-browser…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <button class="faq-q">Is Clippie free to use? <span>+</span></button>
+        <div class="faq-a">Yes! Clippie is completely free to download and use with no hidden fees or subscriptions.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q">Does Clippie send my data to the cloud? <span>+</span></button>
+        <div class="faq-a">No. Clippie stores all clipboard data locally on your PC. Nothing is uploaded or shared externally.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q">How much storage does Clippie use? <span>+</span></button>
+        <div class="faq-a">Very little. Clippie is lightweight and you can set the history limit to 50, 100, 1000 records, or Unlimited in Settings.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q">Does it work on Mac or Linux? <span>+</span></button>
+        <div class="faq-a">Currently Clippie is available for Windows only. Mac and Linux versions may be released in the future.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q">Can I disable the floating button? <span>+</span></button>
+        <div class="faq-a">Absolutely. Head to Settings and toggle "Enable Floating Button" off at any time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Simple as Ctrl+C. Powerful as a pro tool.</h2>
+    <p>Download Clippie and transform your clipboard experience today.</p>
+    <a href="download.html" class="btn-primary">Get Started – Free Download</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><span class="logo">⧉ Clippie</span><p>The smart clipboard manager for Windows.</p></div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Clippie. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
