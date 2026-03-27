@@ -89,9 +89,14 @@ const counters = [
 
 // ── GitHub API Download Counter & Latest Download Link ──
 async function fetchGitHubDownloads() {
+  const GITHUB_API = 'https://api.github.com/repos/Gangula-Sandaru/clippie/releases';
+  
   try {
-    const response = await fetch('https://api.github.com/repos/Gangula-Sandaru/clippie/releases');
-    if (!response.ok) return;
+    const response = await fetch(GITHUB_API);
+    if (!response.ok) {
+      console.warn('GitHub API Response Error:', response.status);
+      return;
+    }
     const releases = await response.json();
     
     let total = 0;
@@ -99,33 +104,46 @@ async function fetchGitHubDownloads() {
     let latestVersion = null;
 
     releases.forEach((rel, index) => {
-      // Sum total downloads
+      // 1. Calculate total downloads across all releases
       if (rel.assets) {
-        rel.assets.forEach(asset => total += asset.download_count);
+        rel.assets.forEach(asset => total += (asset.download_count || 0));
         
-        // Pick the first .exe asset from the first (latest) release
+        // 2. Identify the direct .exe link for the most recent release
         if (index === 0) {
           latestVersion = rel.tag_name;
-          const exeAsset = rel.assets.find(a => a.name.endsWith('.exe'));
-          if (exeAsset) latestExe = exeAsset.browser_download_url;
+          // Find the asset that is likely the installer
+          const exeAsset = rel.assets.find(a => a.name.toLowerCase().endsWith('.exe'));
+          if (exeAsset) {
+            latestExe = exeAsset.browser_download_url;
+            console.log('Latest Clippie Installer Found:', latestExe);
+          }
         }
       }
     });
 
+    // Update Counter elements if present
     if (total > 0) {
-      counters.forEach(c => c.target = total);
+      counters.forEach(c => {
+        const el = document.getElementById(c.id);
+        if (el) c.target = total;
+      });
     }
 
+    // Update all Download Buttons with class .latest-dl-link
     if (latestExe) {
-      document.querySelectorAll('.latest-dl-link').forEach(link => {
+      const dlLinks = document.querySelectorAll('.latest-dl-link');
+      dlLinks.forEach(link => {
         link.href = latestExe;
+        // Optional: remove any default navigation preventers
+        link.onclick = null; 
       });
       
-      const versionLabel = document.querySelector('.dl-version');
-      if (versionLabel) versionLabel.textContent = `Version ${latestVersion} — Windows 10/11`;
+      const vLabel = document.querySelector('.dl-version');
+      if (vLabel) vLabel.textContent = `Version ${latestVersion} — Windows 10/11`;
     }
-  } catch (e) {
-    console.warn('GitHub API failed, using fallback count.');
+
+  } catch (error) {
+    console.error('Download fetch failed:', error);
   }
 }
 fetchGitHubDownloads();
