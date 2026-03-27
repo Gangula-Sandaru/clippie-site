@@ -3,9 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clippie – Smart Clipboard Manager</title>
+  <meta name="description" content="Clippie – The smartest clipboard manager for Windows. Capture, organize, and search your clipboard history instantly. Free, fast, and local."/>
+  <meta name="keywords" content="clipboard manager, windows clipboard, productivity tool, copy paste history, clippie"/>
+  <meta name="author" content="Clippie Team"/>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://clippie.app/"/>
+  <meta property="og:title" content="Clippie – Smart Clipboard Manager for Windows"/>
+  <meta property="og:description" content="Capture everything you copy and organize it smartly. Access your entire clipboard history in seconds."/>
+  <meta property="og:image" content="screenshots/og-image.png"/>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="https://clippie.app/"/>
+  <meta property="twitter:title" content="Clippie – Smart Clipboard Manager for Windows"/>
+  <meta property="twitter:description" content="Capture everything you copy and organize it smartly. Access your entire clipboard history in seconds."/>
+  <meta property="twitter:image" content="screenshots/og-image.png"/>
+
+  <title>Clippie – Your Smart Clipboard, Supercharged.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
 </head>
 <body>
 
@@ -22,7 +45,7 @@
       <li><a href="#support" class="nav-highlight">☕ Support</a></li>
     </ul>
     <a href="download.html" class="btn-nav">Get Clippie Free</a>
-    <button class="burger" id="burger">&#9776;</button>
+    <button class="burger" id="burger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776;</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
@@ -52,7 +75,7 @@
       <div class="stat-divider"></div>
       <div class="stat"><strong>5+</strong><span>Smart Categories</span></div>
       <div class="stat-divider"></div>
-      <div class="stat"><strong>0</strong><span>Cloud Required</span></div>
+      <div class="stat"><strong id="indexDlCount">0</strong><span>Downloads</span></div>
     </div>
   </div>
   <div class="hero-visual fade-up-delay">
@@ -95,22 +118,22 @@
   <div class="container">
     <div class="qf-grid">
       <div class="qf-item fade-up">
-        <div class="qf-icon">📋</div>
+        <div class="qf-icon" role="img" aria-label="Clipboard icon">📋</div>
         <h3>Clipboard History</h3>
         <p>Never lose a copied item again. Clippie stores your full history automatically.</p>
       </div>
-      <div class="qf-item fade-up" style="animation-delay:.1s">
-        <div class="qf-icon">🗂️</div>
+      <div class="qf-item fade-up">
+        <div class="qf-icon" role="img" aria-label="Folders icon">🗂️</div>
         <h3>Smart Categories</h3>
         <p>Text, code, links, emails & images are automatically sorted for you.</p>
       </div>
-      <div class="qf-item fade-up" style="animation-delay:.2s">
-        <div class="qf-icon">🔍</div>
+      <div class="qf-item fade-up">
+        <div class="qf-icon" role="img" aria-label="Search icon">🔍</div>
         <h3>Instant Search</h3>
         <p>Find any clip in milliseconds with the built-in search bar.</p>
       </div>
-      <div class="qf-item fade-up" style="animation-delay:.3s">
-        <div class="qf-icon">⚡</div>
+      <div class="qf-item fade-up">
+        <div class="qf-icon" role="img" aria-label="Bolt icon">⚡</div>
         <h3>One-Click Paste</h3>
         <p>Click any clip from the floating panel to instantly paste it anywhere.</p>
       </div>

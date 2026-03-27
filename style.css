@@ -170,38 +170,48 @@ img { max-width: 100%; }
 
 /* APP MOCKUP */
 .hero-visual { flex: 1.1; position: relative; z-index: 1; }
+/* APP MOCKUP */
+.hero-visual { flex: 1.1; position: relative; z-index: 1; }
 .app-mockup {
   background: var(--card);
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px -20px rgba(59,110,245,0.25);
   overflow: hidden; border: 1px solid var(--border);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.app-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+
 .mockup-bar {
-  background: var(--bg2); padding: 10px 16px;
-  display: flex; align-items: center; gap: 6px;
+  background: rgba(245,246,250,0.8);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  display: flex; align-items: center; gap: 8px;
   border-bottom: 1px solid var(--border);
 }
-.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
 .red{background:#ff5f57;} .yellow{background:#febc2e;} .green{background:#28c840;}
-.mockup-title { margin-left: 10px; font-family:'Syne',sans-serif; font-weight:700; font-size:.9rem; color:var(--blue); }
-.mockup-body { display:flex; }
-.mockup-sidebar { background: var(--bg2); width:170px; padding:12px 0; border-right:1px solid var(--border); flex-shrink:0; }
-.ms-item { padding:8px 16px; font-size:.78rem; font-weight:500; color:var(--text2); cursor:pointer; transition:background var(--transition); }
-.ms-item.active { background:var(--blue); color:#fff; border-radius:6px; margin:0 8px; }
-.ms-item:hover:not(.active) { background:var(--bg); }
-.mockup-main { padding:16px; flex:1; }
-.mockup-search { background:var(--bg2); border-radius:var(--radius-sm); padding:8px 14px; font-size:.82rem; color:var(--text2); margin-bottom:12px; border:1px solid var(--border); }
+.mockup-title { margin-left: auto; margin-right: auto; font-family:'Syne',sans-serif; font-weight:800; font-size:.82rem; color:var(--text2); letter-spacing: 0.5px; opacity: 0.8; }
+.mockup-body { display:flex; height: 320px; }
+.mockup-sidebar { background: rgba(238,240,247,0.5); width:180px; padding:16px 0; border-right:1px solid var(--border); flex-shrink:0; }
+.ms-item { padding:10px 20px; font-size:.78rem; font-weight:600; color:var(--text2); cursor:pointer; transition:all var(--transition); border-left: 3px solid transparent; }
+.ms-item:hover:not(.active) { background:rgba(59,110,245,0.05); color: var(--blue); }
+.ms-item.active { background:rgba(59,110,245,0.1); color:var(--blue); border-left-color: var(--blue); }
+.mockup-main { padding:20px; flex:1; background: #fff; }
+.mockup-search { background:var(--bg); border-radius:12px; padding:10px 16px; font-size:.82rem; color:var(--text2); margin-bottom:16px; border:1px solid var(--border); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
 .clip-card {
-  background: var(--bg2); border-radius:10px; padding:12px 14px; margin-bottom:10px;
-  border:1px solid var(--border);
+  background: #fff; border-radius:12px; padding:16px; margin-bottom:12px;
+  border:1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
 }
+.clip-card:hover { transform: scale(1.02); border-color: var(--blue-light); }
 .clip-tag {
-  display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:4px;
-  background:rgba(59,110,245,0.12); color:var(--blue); margin-bottom:6px;
+  display:inline-block; font-size:.65rem; font-weight:800; padding:3px 10px; border-radius:6px;
+  background:rgba(59,110,245,0.1); color:var(--blue); margin-bottom:8px; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.img-tag { background:rgba(239,154,0,0.12); color:#b45309; }
-.clip-card p { font-size:.82rem; color:var(--text); }
-.clip-img-placeholder { height:50px; background:linear-gradient(135deg,#e0e7ff,#c7d2fe); border-radius:6px; }
+.img-tag { background:rgba(239,154,0,0.1); color:#b45309; }
+.clip-card p { font-size:.85rem; color:var(--text); line-height: 1.4; }
+.clip-img-placeholder { height:60px; background:linear-gradient(135deg,#e0e7ff,#c7d2fe); border-radius:8px; }
 
 /* ANIMATION CLASSES */
 .fade-up { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
