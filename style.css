@@ -502,3 +502,81 @@ kbd {
   .hero-stats { flex-direction:column; gap:20px; }
   .stat-divider { width:40px; height:1px; }
 }
+
+
+
+/* Donation Section */
+.support-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.support-header {
+    margin-bottom: 50px;
+}
+
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.donation-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.donation-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.donation-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.donation-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.donation-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.donation-btn {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    transition: all 0.2s;
+}
+
+/* Platform specific colors */
+.kofi:hover .donation-btn { background: #ff5e5b; color: white; }
+.bmc:hover .donation-btn { background: #FFDD00; color: #000; }
+.github:hover .donation-btn { background: #2ea44f; color: white; }
+
+.nav-highlight {
+    color: #ff5e5b !important;
+    font-weight: 600;
+}
