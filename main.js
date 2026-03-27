@@ -101,6 +101,7 @@ async function fetchGitHubDownloads() {
     let total = 0;
     let latestExe = null;
     let latestVersion = null;
+    let latestDigest = null;
 
     releases.forEach((rel, index) => {
       if (rel.assets) {
@@ -108,10 +109,10 @@ async function fetchGitHubDownloads() {
         
         if (index === 0) {
           latestVersion = rel.tag_name;
-          // Priority for .exe files
           const exeAsset = rel.assets.find(a => a.name.toLowerCase().endsWith('.exe'));
           if (exeAsset) {
             latestExe = exeAsset.browser_download_url;
+            latestDigest = exeAsset.digest || null;
             cachedExeUrl = latestExe;
           }
         }
@@ -133,6 +134,18 @@ async function fetchGitHubDownloads() {
       
       const vLabel = document.querySelector('.dl-version');
       if (vLabel) vLabel.textContent = `Version ${latestVersion} — Windows 10/11`;
+
+      // Update Integrity Section
+      if (latestDigest) {
+        const shaEl = document.getElementById('shaHash');
+        const integrityBox = document.getElementById('fileIntegrity');
+        if (shaEl && integrityBox) {
+          // Clean the digest string (remove "sha256:" prefix if exists)
+          const cleanHash = latestDigest.includes(':') ? latestDigest.split(':')[1] : latestDigest;
+          shaEl.textContent = cleanHash;
+          integrityBox.style.opacity = '1';
+        }
+      }
     }
 
   } catch (error) {
