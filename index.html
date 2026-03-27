@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3b6ef5" />
   <meta name="description"
     content="Clippie – The smartest clipboard manager for Windows. Capture, organize, and search your clipboard history instantly. Free, fast, and local." />
   <meta name="keywords"
-    content="clipboard manager, windows clipboard, productivity tool, copy paste history, clippie" />
+    content="clipboard manager, windows clipboard, productivity tool, copy paste history, clippie, OCR" />
   <meta name="author" content="Clippie Team" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Clippie" />
   <meta property="og:url" content="https://clippie.app/" />
   <meta property="og:title" content="Clippie – Smart Clipboard Manager for Windows" />
   <meta property="og:description"
@@ -40,7 +42,7 @@
 
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <span class="logo-icon">⧉</span> Clippie
@@ -76,8 +78,8 @@
           <a href="how-it-works.html" class="btn-ghost">How It Works →</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><strong>1k+</strong><span>Users Daily</span></div>
-          <div class="stat"><strong>50k+</strong><span>Texts Extracted</span></div>
+          <div class="stat"><strong id="userCount">1k+</strong><span>Users Daily</span></div>
+          <div class="stat"><strong id="ocrCount">50k+</strong><span>Texts Extracted</span></div>
           <div class="stat"><strong id="indexDlCount">0</strong><span>Downloads</span></div>
         </div>
       </div>
@@ -85,9 +87,9 @@
         <div class="ocr-peek">
           <div class="ocr-peek-bar"></div>
           <div class="ocr-peek-text">
-            > TEXT DETECTED:<br>
+            &gt; TEXT DETECTED:<br>
             "Copy text without stopping..."<br>
-            > EXTRACTING... DONE.
+            &gt; EXTRACTING... DONE.
           </div>
           <div style="margin-top:auto; font-size:0.7rem; color:var(--blue); font-weight:800;">PASS-THROUGH ACTIVE</div>
         </div>
@@ -124,26 +126,26 @@
   <section class="quick-features">
     <div class="container">
       <div class="qf-grid">
-        <div class="qf-item fade-up">
+        <article class="qf-item fade-up">
           <div class="qf-icon" role="img" aria-label="Clipboard icon">📋</div>
           <h3>Clipboard History</h3>
           <p>Never lose a copied item again. Clippie stores your full history automatically.</p>
-        </div>
-        <div class="qf-item fade-up">
+        </article>
+        <article class="qf-item fade-up">
           <div class="qf-icon" role="img" aria-label="Folders icon">🗂️</div>
           <h3>Smart Categories</h3>
           <p>Text, code, links, emails & images are automatically sorted for you.</p>
-        </div>
-        <div class="qf-item fade-up">
+        </article>
+        <article class="qf-item fade-up">
           <div class="qf-icon" role="img" aria-label="Search icon">🔍</div>
           <h3>Instant Search</h3>
           <p>Find any clip in milliseconds with the built-in search bar.</p>
-        </div>
-        <div class="qf-item fade-up">
+        </article>
+        <article class="qf-item fade-up">
           <div class="qf-icon" role="img" aria-label="Bolt icon">⚡</div>
           <h3>One-Click Paste</h3>
           <p>Click any clip from the floating panel to instantly paste it anywhere.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -179,14 +181,14 @@
       </div>
 
       <div class="donation-grid">
-        <a href="https://ko-fi.com/yourusername" target="_blank" class="donation-card kofi">
+        <a href="https://ko-fi.com/Gangula-Sandaru" target="_blank" rel="noopener" class="donation-card kofi">
           <div class="donation-icon-wrapper">☕</div>
           <h3>Ko-fi</h3>
           <p>Support the work directly with a small donation on Ko-fi. No fees, just pure support.</p>
           <span class="donation-btn">Support via Ko-fi</span>
         </a>
 
-        <a href="https://buymeacoffee.com/yourusername" target="_blank" class="donation-card bmc">
+        <a href="https://buymeacoffee.com/Gangula-Sandaru" target="_blank" rel="noopener" class="donation-card bmc">
           <div class="popular-tag">Most Popular</div>
           <div class="donation-icon-wrapper">⚡</div>
           <h3>Buy Me a Coffee</h3>
@@ -194,7 +196,7 @@
           <span class="donation-btn">Buy a Coffee</span>
         </a>
 
-        <a href="https://github.com/sponsors/yourusername" target="_blank" class="donation-card github">
+        <a href="https://github.com/sponsors/Gangula-Sandaru" target="_blank" rel="noopener" class="donation-card github">
           <div class="donation-icon-wrapper">💖</div>
           <h3>Sponsors</h3>
           <p>Help ensure the long-term sustainability of Clippie by becoming a recurring sponsor.</p>
@@ -222,7 +224,7 @@
 
         <div class="footer-links-col">
           <h4>Quick Links</h4>
-          <nav class="footer-nav">
+          <nav class="footer-nav" aria-label="Footer Navigation">
             <a href="features.html">Features</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="download.html">Download</a>
@@ -236,9 +238,9 @@
         <p class="footer-copy">© 2026 Clippie. Made with 💖 in Sri Lanka 🇱🇰 by <a href="creator.html"
             style="color: var(--blue); font-weight: 700;">Gangula Sandaru</a></p>
         <div class="social-links">
-          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-          <a href="https://github.com/Gangula-Sandaru" class="social-link" aria-label="GitHub">Git</a>
-          <a href="https://linkedin.com/in/gangula-sandaru" class="social-link" aria-label="LinkedIn">LnkdIn</a>
+          <a href="https://twitter.com/GangulaSandaru" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="https://github.com/Gangula-Sandaru" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">Git</a>
+          <a href="https://linkedin.com/in/gangula-sandaru" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">LnkdIn</a>
         </div>
       </div>
     </div>
