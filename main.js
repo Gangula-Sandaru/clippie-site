@@ -87,6 +87,29 @@ const counters = [
   { id: 'indexDlCount', target: 2840, duration: 1500 }
 ];
 
+// ── GitHub API Download Counter ──
+async function fetchGitHubDownloads() {
+  try {
+    const response = await fetch('https://api.github.com/repos/Gangula-Sandaru/clippie/releases');
+    if (!response.ok) return;
+    const releases = await response.json();
+    let total = 0;
+    releases.forEach(rel => {
+      if (rel.assets) {
+        rel.assets.forEach(asset => total += asset.download_count);
+      }
+    });
+
+    if (total > 0) {
+      counters.forEach(c => c.target = total);
+      // If counters are already in view, they might need a manual trigger or just wait for observer
+    }
+  } catch (e) {
+    console.warn('GitHub API failed, using fallback count.');
+  }
+}
+fetchGitHubDownloads();
+
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
