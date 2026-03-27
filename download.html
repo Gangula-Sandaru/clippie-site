@@ -62,8 +62,7 @@
         </div>
       </div>
       <div class="dl-right">
-        <!-- UPDATE THIS HREF TO YOUR ACTUAL DOWNLOAD LINK -->
-        <a href="#" class="btn-download" id="downloadBtn">
+        <a href="#" class="btn-download latest-dl-link" id="downloadBtn">
           <span class="dl-arrow">↓</span>
           Download for Windows
         </a>
@@ -145,7 +144,7 @@
   <div class="container">
     <h2>Ready? It takes 30 seconds to install.</h2>
     <p>Join users who've already upgraded their clipboard workflow.</p>
-    <a href="#" class="btn-primary">Download Now – Free</a>
+    <a href="#" class="btn-primary latest-dl-link">Download Now – Free</a>
   </div>
 </section>
 
@@ -181,17 +180,5 @@
 </footer>
 
 <script src="main.js"></script>
-<script>
-  // Simple listener for the download button effect
-  document.getElementById('downloadBtn').addEventListener('click', function(e){
-    e.preventDefault();
-    this.textContent = '✓ Thank you! Link coming soon';
-    this.style.background = 'var(--green)';
-    setTimeout(()=>{
-      this.innerHTML = '<span class="dl-arrow">↓</span> Download for Windows';
-      this.style.background = '';
-    }, 3000);
-  });
-</script>
 </body>
 </html>

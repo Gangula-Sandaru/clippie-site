@@ -87,22 +87,42 @@ const counters = [
   { id: 'indexDlCount', target: 2840, duration: 1500 }
 ];
 
-// ── GitHub API Download Counter ──
+// ── GitHub API Download Counter & Latest Download Link ──
 async function fetchGitHubDownloads() {
   try {
     const response = await fetch('https://api.github.com/repos/Gangula-Sandaru/clippie/releases');
     if (!response.ok) return;
     const releases = await response.json();
+    
     let total = 0;
-    releases.forEach(rel => {
+    let latestExe = null;
+    let latestVersion = null;
+
+    releases.forEach((rel, index) => {
+      // Sum total downloads
       if (rel.assets) {
         rel.assets.forEach(asset => total += asset.download_count);
+        
+        // Pick the first .exe asset from the first (latest) release
+        if (index === 0) {
+          latestVersion = rel.tag_name;
+          const exeAsset = rel.assets.find(a => a.name.endsWith('.exe'));
+          if (exeAsset) latestExe = exeAsset.browser_download_url;
+        }
       }
     });
 
     if (total > 0) {
       counters.forEach(c => c.target = total);
-      // If counters are already in view, they might need a manual trigger or just wait for observer
+    }
+
+    if (latestExe) {
+      document.querySelectorAll('.latest-dl-link').forEach(link => {
+        link.href = latestExe;
+      });
+      
+      const versionLabel = document.querySelector('.dl-version');
+      if (versionLabel) versionLabel.textContent = `Version ${latestVersion} — Windows 10/11`;
     }
   } catch (e) {
     console.warn('GitHub API failed, using fallback count.');
